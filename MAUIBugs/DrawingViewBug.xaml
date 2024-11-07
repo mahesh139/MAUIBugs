@@ -5,9 +5,9 @@
              xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
              x:Class="MAUIBugs.DrawingViewBug">
 
-    <Grid RowSpacing="10" RowDefinitions="Auto,*,Auto">
+    <Grid RowSpacing="10" RowDefinitions="Auto,*,Auto" Margin="10,10,10,10">
         <Label Grid.Row="0" Text="{Binding SectionLabel}"></Label>
-        <ScrollView 
+        <!--<ScrollView 
             Grid.Row="1"
             x:Name="svCurrentAnswers" 
             Orientation="Vertical" 
@@ -35,10 +35,30 @@
                     </BindableLayout.ItemTemplate>
                 </StackLayout>
             </Grid>
-        </ScrollView>
-        <Grid Grid.Row="2" ColumnDefinitions="*,*" ColumnSpacing="10">
+        </ScrollView>-->
+        <CollectionView Grid.Row="1" ItemsSource="{Binding CurrentAnswers}"  ios:ScrollView.ShouldDelayContentTouches="False">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid RowDefinitions="50,*">
+                        <Label Grid.Row="0" Text="{Binding QuestionText}"></Label>
+                        <mct:DrawingView 
+                            Grid.Row="1"
+                            LineColor="Black"
+                            LineWidth="3"
+                            BackgroundColor="AliceBlue"
+                            IsMultiLineModeEnabled="True"
+                            ShouldClearOnFinish="False"
+                            HeightRequest="150"
+                            Lines="{Binding SignatureLines}">
+                        </mct:DrawingView>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Grid Grid.Row="2" RowDefinitions="50,50" ColumnDefinitions="*,*" ColumnSpacing="10" RowSpacing="10">
             <Button Grid.Column="0" Text="Section 1" Command="{Binding LoadSection1Command}"></Button>
             <Button Grid.Column="1" Text="Section 2" Command="{Binding LoadSection2Command}"></Button>
+            <Button x:Name="pickerBug" Grid.Row="2" Grid.ColumnSpan="2" Text="Picker BUG" Clicked="pickerBug_Clicked"></Button>
         </Grid>
     </Grid>
 </ContentPage>

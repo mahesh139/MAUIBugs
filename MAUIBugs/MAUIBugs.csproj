@@ -59,8 +59,8 @@
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="9.1.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.92" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.92" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.93" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.93" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
 		<PackageReference Include="PropertyChanged.Fody" Version="4.1.0" />
 		<PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
@@ -68,12 +68,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="BindableLayoutPickerBug.xaml.cs">
+	    <DependentUpon>BindableLayoutPickerBug.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="DrawingViewBug.xaml.cs">
 	    <DependentUpon>DrawingViewBug.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="BindableLayoutPickerBug.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="DrawingViewBug.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

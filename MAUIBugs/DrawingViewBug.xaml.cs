@@ -1,4 +1,5 @@
-﻿using MAUIBugs.ViewModels;
+﻿using Android.Media;
+using MAUIBugs.ViewModels;
 
 namespace MAUIBugs
 {
@@ -8,6 +9,11 @@ namespace MAUIBugs
         {
             InitializeComponent();
             this.BindingContext = new TestViewModel();
+        }
+
+        private async void pickerBug_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(BindableLayoutPickerBug));
         }
     }
 }
