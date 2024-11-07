@@ -41,7 +41,7 @@
             <Button Grid.Column="1" Text="Section 2" Command="{Binding LoadSection2Command}"></Button>
             <Button x:Name="pickerBug" Grid.Row="1" Grid.ColumnSpan="2" Text="Picker BUG (Android, iOS)" Clicked="pickerBug_Clicked"></Button>
             <Button x:Name="carouselBug" Grid.Row="2" Grid.ColumnSpan="2" Text="Carousel Bug (iOS)" Clicked="carouselBug_Clicked"></Button>
-            <Button x:Name="collectionViewPickerBug" Grid.Row="3" Grid.ColumnSpan="2" Text="Collection View Picker Bug (iOS)" Clicked="collectionViewPickerBug_Clicked"></Button>
+            <Button x:Name="collectionViewPickerBug" Grid.Row="3" Grid.ColumnSpan="2" Text="Collection View Picker Bug" Clicked="collectionViewPickerBug_Clicked"></Button>
         </Grid>
         <Label Grid.Row="3">
             <Label.FormattedText>
