@@ -68,6 +68,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="CollectionViewPickerBug.xaml.cs">
+	    <DependentUpon>CollectionViewPickerBug.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="BindableLayoutPickerBug.xaml.cs">
 	    <DependentUpon>BindableLayoutPickerBug.xaml</DependentUpon>
 	  </Compile>
@@ -77,7 +80,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="CollectionViewPickerBug.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="BindableLayoutPickerBug.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="CarouselViewBug.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="DrawingViewBug.xaml">
